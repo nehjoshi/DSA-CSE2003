@@ -23,6 +23,7 @@ void AddAtFront(struct Node **head, int data)
     temp->next = *head;
     *head = temp;
 }
+
 void Append(struct Node **head, int data){
     struct Node *temp = new Node;
     struct Node *last = *head;
@@ -32,6 +33,29 @@ void Append(struct Node **head, int data){
         last = last->next;
     }
     last->next = temp;
+}
+
+void AddAtPosition(struct Node **head, int position, int data){  //0 5 10 15 20
+    struct Node *temp = new Node;
+    struct Node *n = *head;
+    temp->data = data;
+    int i = 1;
+    while (i < position-1){
+        n = n->next;
+        i+=1;
+    }
+    temp->next = n->next;
+    n->next = temp;
+}
+
+int GetLength(struct Node **list){
+    int length = 0;
+    struct Node *n = *list;
+    while (n != NULL){
+        n = n->next;
+        length += 1;
+    }
+    return length;
 
 }
 
@@ -53,5 +77,9 @@ int main()
     Append(&head, 14);
     cout << "Now appending 13 and 14" << endl;
     Print(head);
+    cout << "Now adding 24 at the fourth position" << endl;
+    AddAtPosition(&head, 4, 24);
+    Print(head);
+    cout << "Length of the linked list: " << GetLength(&head) << endl;
     return 0;
 }
