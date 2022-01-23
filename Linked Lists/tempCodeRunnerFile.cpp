@@ -1,1 +1,1 @@
-Print(head);
+root = NULL;
