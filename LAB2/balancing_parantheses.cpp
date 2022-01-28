@@ -78,6 +78,7 @@ struct Node *Pop(struct Node *head)
     }
     return head;
 }
+
 char GetTop(struct Node *head)
 {
     char top;

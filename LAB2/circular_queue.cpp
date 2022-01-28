@@ -91,6 +91,7 @@ int main(){
     head = Enqueue(head, 10);
     head = Enqueue(head, 20);
     head = Enqueue(head, 30);
+    head = Enqueue(head, 40);
     head = Dequeue(head);
     head = Dequeue(head);
     Display(head);

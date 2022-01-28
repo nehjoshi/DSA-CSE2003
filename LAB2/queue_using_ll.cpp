@@ -54,8 +54,6 @@ void Dequeue(struct Node **head)
     {
         n = n->next;
     }
-    struct Node *del = n->next;
-    free(del);
     n->next = NULL;
     rear = rear - 1;
     return;
@@ -72,5 +70,3 @@ int main()
     Display(head);
     return 0;
 }
-//To do: circular queue
-//Postlab: tower of hanoi and balancing parenthesis and stack using queue

@@ -71,20 +71,9 @@ int main()
     struct Node *head = new Node;
     Push(&head, 20);
     Push(&head, 30);
-    Push(&head, 40);
-    Push(&head, 50);
-    Push(&head, 60);
     Display(head);
+    cout << "Now popping" << endl;
     Pop(&head);
-    Display(head);
-    Pop(&head);
-    Display(head);
-    Pop(&head);
-    Pop(&head);
-    Pop(&head);
-    Display(head);
-    Pop(&head);
-    Push(&head, 20);
     Display(head);
     return 0;
 }
