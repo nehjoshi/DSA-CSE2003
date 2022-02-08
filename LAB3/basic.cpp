@@ -95,18 +95,16 @@ int main()
 {
 
     struct Node *head = new Node;
-    head->data = 0;
-    head->next = NULL;
-    Print(head);
+    head = NULL;
     AddAtFront(&head, 12);
-    cout << "Now adding 12" << endl;
+    cout << "Adding 12 to the LL" << endl;
     Print(head);
     AddAtFront(&head, 11);
-    cout << "Now adding 11" << endl;
+    cout << "Now adding 11 to the LL" << endl;
     Print(head);
     Append(&head, 13);
     Append(&head, 14);
-    cout << "Now appending 13 and 14" << endl;
+    cout << "Now adding 13 and 14 at the end" << endl;
     Print(head);
     cout << "Now adding 24 at the fourth position" << endl;
     AddAtPosition(&head, 4, 24);
