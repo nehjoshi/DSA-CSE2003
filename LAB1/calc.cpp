@@ -37,22 +37,16 @@ int main()
         case '+':
             cout << "The required sum is: " << a + b << endl;
             answer = a + b;
-            cout << "Memory location of answer is: " << ptr << endl;
-            cout << "Value stored in the memory address " << *ptr << endl;
             askForContinue();
             break;
         case '-':
             cout << "The required difference is: " << a - b << endl;
             answer = a - b;
-            cout << "Memory location of answer is: " << ptr << endl;
-            cout << "Value stored in the memory address " << *ptr << endl;
             askForContinue();
             break;
         case '*':
             cout << "The required product is: " << a * b << endl;
             answer = a * b;
-            cout << "Memory location of answer is: " << ptr << endl;
-            cout << "Value stored in the memory address " << *ptr << endl;
             askForContinue();
             break;
         case '/':
@@ -66,8 +60,6 @@ int main()
             {
                 cout << "The required quotient is: " << a / b << endl;
                 answer = a / b;
-                cout << "Memory location of answer is: " << ptr << endl;
-                cout << "Value stored in the memory address " << *ptr << endl;
                 askForContinue();
                 break;
             }
