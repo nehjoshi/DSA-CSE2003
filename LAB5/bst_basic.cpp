@@ -12,6 +12,24 @@ struct Node* GetNewNode(int data){
     newNode->left = newNode->right = NULL;
     return newNode;
 }
+void Preorder(struct Node *root){
+    if (root==NULL) return;
+    cout << root->data << endl;
+    Preorder(root->left);
+    Preorder(root->right);
+}
+void Inorder(struct Node *root){
+    if (root==NULL) return;
+    Inorder(root->left);
+    cout << root->data << endl;
+    Inorder(root->right);
+}
+void Postorder(struct Node *root){
+    if (root==NULL) return;
+    Postorder(root->left);
+    Postorder(root->right);
+    cout << root->data << endl;
+}
 struct Node* Insert(struct Node *root, int data){
     if (root == NULL){
         root = GetNewNode(data);
@@ -24,14 +42,12 @@ struct Node* Insert(struct Node *root, int data){
     }
     return root;
 }
-
 bool Search(struct Node* root, int value){
     if (root==NULL) return false;
     else if(root->data==value) return true;
     else if(value <= root->data) return Search(root->left, value);
     else return Search(root->right, value);
 }
-
 struct Node *FindMin(struct Node *root){
     struct Node *current = root;
     while (current->left != NULL){
@@ -39,7 +55,6 @@ struct Node *FindMin(struct Node *root){
     }
     return current;
 }
-
 struct Node* Delete(struct Node *root, int data){
     if (root==NULL) return root;
     else if(data < root->data) root->left = Delete(root->left, data);
@@ -82,10 +97,9 @@ int main(){
     root = Insert(root, 9);
     root = Insert(root, 13);
     root = Insert(root, 17);
-    int nodeToDelete = 7;
-    root = Delete(root, nodeToDelete);
-    bool isThere = Search(root, nodeToDelete);
-    if (isThere == true) cout << nodeToDelete << " is there in the tree" << endl;
-    else cout << nodeToDelete << " is not there in the tree" << endl;
+    root = Insert(root, 2);
+    root = Delete(root, 2);
+    cout << "Visualizing the BST" << endl;
+    Inorder(root);
     return 0;
 }
