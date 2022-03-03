@@ -10,7 +10,7 @@ struct node *head[TABLE_SIZE] = {NULL}, *c;
 void insert()
 {
     int i, key;
-    printf("\nenter a value to insert into hash table\n");
+    printf("\nenter a value to insert into hash table\1n");
     scanf("%d", &key);
     i = key % TABLE_SIZE;
     struct node *newnode = (struct node *)malloc(sizeof(struct node));
